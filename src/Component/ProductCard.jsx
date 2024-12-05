@@ -1,20 +1,16 @@
 import { useState } from "react"
 
-export const ProductCard = ({product}) => {
-   
-   
+export const ProductCard = ({ product }) => {
+
     return (
         <div>
-            <ul>
-                {products.map((product) => (<li key={product.id}>
-                    <h3>{product.name}</h3>
-                    <p>Price: {product.price}</p>
-                    <p>Stock: {product.stock}</p>
-                </li>
-                ))}
-            </ul>
+            {product.map((product) => {
+                <div key={product.name} className="card m-5">
+                    <div className="card-header">{product.name}</div>
+                    <div className="card-body">{product.price}</div>
+                    <div className="card-footer">{product.stock}</div>
+                </div>
+            })}
         </div>
     )
-
-
 }
